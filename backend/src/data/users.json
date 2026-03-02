@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "email": "alice.johnson@example.com",
+    "address": "123 Maple Street, Springfield, IL",
+    "phone": "+1-555-0101"
+  },
+  {
+    "id": 2,
+    "name": "Bob Smith",
+    "email": "bob.smith@example.com",
+    "address": "456 Oak Avenue, Denver, CO",
+    "phone": "+1-555-0102"
+  },
+  {
+    "id": 3,
+    "name": "Carol Williams",
+    "email": "carol.williams@example.com",
+    "address": "789 Pine Road, Austin, TX",
+    "phone": "+1-555-0103"
+  },
+  {
+    "id": 4,
+    "name": "David Brown",
+    "email": "david.brown@example.com",
+    "address": "321 Cedar Lane, Seattle, WA",
+    "phone": "+1-555-0104"
+  },
+  {
+    "id": 5,
+    "name": "Emma Davis",
+    "email": "emma.davis@example.com",
+    "address": "654 Birch Blvd, Boston, MA",
+    "phone": "+1-555-0105"
+  },
+  {
+    "id": 6,
+    "name": "Frank Miller",
+    "email": "frank.miller@example.com",
+    "address": "987 Walnut Street, San Jose, CA",
+    "phone": "+1-555-0106"
+  },
+  {
+    "id": 7,
+    "name": "Grace Wilson",
+    "email": "grace.wilson@example.com",
+    "address": "147 Elm Court, Raleigh, NC",
+    "phone": "+1-555-0107"
+  },
+  {
+    "id": 8,
+    "name": "Henry Moore",
+    "email": "henry.moore@example.com",
+    "address": "258 Aspen Drive, Madison, WI",
+    "phone": "+1-555-0108"
+  },
+  {
+    "id": 9,
+    "name": "anjula",
+    "email": "test@email.com",
+    "address": "helsinki",
+    "phone": "0547848849"
+  },
+  {
+    "id": 10,
+    "name": "Aashna",
+    "email": "ashna@email.com",
+    "address": "espoo",
+    "phone": "3456789034"
+  }
+]
