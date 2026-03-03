@@ -1,0 +1,32 @@
+{
+	"servers": {
+		"learn-mcp-server": {
+			"type": "stdio",
+			"command": "node",
+			"args": [
+				"dist/mcpServer.js"
+			],
+			"cwd": "${workspaceFolder}/backend",
+			"dev": {
+				"env": {
+					"NODE_ENV": "development"
+				},
+				"watch": [
+					"src/**/*.ts"
+				],
+				"debug": {
+					"type": "node"
+				}
+			}
+		},
+		"test-server": {
+			"type": "stdio",
+			"command": "npm",
+			"args": [
+				"run",
+				"mcp:serve"
+			]
+		}
+	},
+	"inputs": []
+}

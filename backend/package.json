@@ -8,8 +8,8 @@
     "build": "tsc",
     "build:watch": "tsc --watch",
     "start": "node dist/index.js",
-    "mcp:serve": "node ./src/mcpServer.ts",
-    "mcp:inspect": "DANGEROUSLY_OMIT_AUTH=true npx @modelcontextprotocol/inspector npm run mcp:serve"
+    "mcp:serve": "node dist/mcpServer.js",
+    "mcp:inspect": "npm run build && DANGEROUSLY_OMIT_AUTH=true npx @modelcontextprotocol/inspector npm run mcp:serve"
   },
   "keywords": [],
   "author": "",

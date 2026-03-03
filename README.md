@@ -12,7 +12,7 @@ npm create vite@latest app-name
 ✔ Select a framework: React
 ✔ Select a variant: TypeScript
 
-### Run the App
+### Run the App Frontend
 
 ```bash
 npm run dev
@@ -119,13 +119,59 @@ Add this script to your `backend/package.json`:
 npm run mcp:inspect
 ```
 
+## MCP Tools
+
+### create-user
+
+The `create-user` tool allows you to create new users in the system.
+
+**Input Parameters:**
+```json
+{
+  "name": "string",
+  "email": "string (valid email format)",
+  "address": "string",
+  "phone": "string"
+}
+```
+
+**Implementation Details:**
+- ✅ Validates input using Zod schema
+- ✅ Auto-generates unique user IDs
+- ✅ Persists data to `users.json` file
+- ✅ Returns success response with created user
+
+**How it works:**
+1. Tool receives user data from client
+2. Handler validates input with Zod schema
+3. Reads existing users from `src/data/users.json`
+4. Generates new ID by incrementing array length
+5. Creates new user object with auto-generated ID
+6. Appends new user to the array
+7. Writes updated array back to JSON file (acts as database)
+8. Returns success response with user details
+
+**Example Response:**
+```json
+{
+  "success": true,
+  "user": {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "address": "123 Main St",
+    "phone": "555-0100"
+  }
+}
+```
+
 ## Important Notes
 
 ### ✅ What Works
 - MCP can run from TypeScript
 - MCP can run in dev mode
 - MCP Inspector works reliably with a single, stable Node process
-
+- Mcp tool is hooked up with client (copilot) to
 ### ❌ Known Issues
 - MCP Inspector does NOT work reliably with:
   - nodemon (hot reload)

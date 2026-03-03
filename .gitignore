@@ -4,6 +4,9 @@ node_modules
 dist
 
 # Editor directories and files
-.vscode/*
+.vscode/settings.json
 .DS_Store
+
+# Personal development configs
+claude_desktop_config.json
 

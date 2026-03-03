@@ -68,5 +68,26 @@
     "email": "ashna@email.com",
     "address": "espoo",
     "phone": "3456789034"
+  },
+  {
+    "id": 11,
+    "name": "anju",
+    "email": "tim@email.com",
+    "address": "helsinki",
+    "phone": "034567788"
+  },
+  {
+    "id": 12,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "address": "Espoo",
+    "phone": "045657576767"
+  },
+  {
+    "id": 13,
+    "name": "Jimmy Doe",
+    "email": "jimmy@example.com",
+    "address": "espp",
+    "phone": "1358689968"
   }
 ]
