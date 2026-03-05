@@ -1,4 +1,4 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import fs from "fs/promises";
 import { z } from "zod";
@@ -12,6 +12,71 @@ export const mcpServer= new McpServer({
         prompts:{}
     },
 }as any);
+
+
+mcpServer.registerResource(
+  "users",
+  "users://all",
+  {
+    description: "getall all users from database",
+    title: "Users",
+    mimeType: "application/json",
+  },
+  async (uri) => {
+    const users = await import("./data/users.json", {
+      with: { type: "json" },
+    }).then((mod) => mod.default);
+
+    return {
+      contents: [
+        {
+          uri: uri.href,
+          text: JSON.stringify(users),
+          mimeType: "application/json",
+        },
+      ],
+    };
+  },
+);
+
+mcpServer.registerResource(
+  "user-details",
+  new ResourceTemplate("users://{userId}/profile", { list: undefined }),
+  {
+    description: "get user details by id from database",
+    title: "User Details",
+    mimeType: "application/json",
+  },
+  async (uri, { userId }) => {
+    const users = await import("./data/users.json", {
+      with: { type: "json" },
+    }).then((mod) => mod.default);
+
+    const user = users.find((u) => u.id === parseInt(userId as string));
+    if (!user) {
+      return {
+        contents: [
+          {
+            uri: uri.href,
+            text: JSON.stringify({ error: "User not found" }),
+            mimeType: "application/json",
+          },
+        ],
+      };
+    }
+
+    return {
+      contents: [
+        {
+          uri: uri.href,
+          text: JSON.stringify(user),
+          mimeType: "application/json",
+        },
+      ],
+    };
+  },
+);
+
 //register with new API
 mcpServer.registerTool(
     "create-user",
